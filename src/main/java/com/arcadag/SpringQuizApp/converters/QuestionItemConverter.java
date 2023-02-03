@@ -1,7 +1,7 @@
-package com.arcadag.SpringTestApp.converters;
+package com.arcadag.SpringQuizApp.converters;
 
-import com.arcadag.SpringTestApp.dtos.QuestionItemDto;
-import com.arcadag.SpringTestApp.models.QuestionItem;
+import com.arcadag.SpringQuizApp.dtos.QuestionItemDto;
+import com.arcadag.SpringQuizApp.models.QuestionItem;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;

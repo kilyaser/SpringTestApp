@@ -1,4 +1,4 @@
-package com.arcadag.SpringTestApp.dtos;
+package com.arcadag.SpringQuizApp.dtos;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

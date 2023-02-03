@@ -1,8 +1,8 @@
-package com.arcadag.SpringTestApp.servicies;
+package com.arcadag.SpringQuizApp.servicies;
 
-import com.arcadag.SpringTestApp.domain.QuizBuilder;
-import com.arcadag.SpringTestApp.models.QuestionItem;
-import com.arcadag.SpringTestApp.models.Quiz;
+import com.arcadag.SpringQuizApp.domain.QuizBuilder;
+import com.arcadag.SpringQuizApp.models.QuestionItem;
+import com.arcadag.SpringQuizApp.models.Quiz;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

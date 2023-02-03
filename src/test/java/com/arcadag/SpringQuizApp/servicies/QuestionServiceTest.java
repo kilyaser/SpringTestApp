@@ -1,6 +1,5 @@
-package com.arcadag.SpringTestApp.servicies;
+package com.arcadag.SpringQuizApp.servicies;
 
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.arcadag.SpringTestApp.models;
+package com.arcadag.SpringQuizApp.models;
 
 import lombok.Data;
 import java.util.Map;

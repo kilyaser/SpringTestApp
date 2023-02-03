@@ -1,4 +1,4 @@
-package com.arcadag.SpringTestApp.exception;
+package com.arcadag.SpringQuizApp.exception;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

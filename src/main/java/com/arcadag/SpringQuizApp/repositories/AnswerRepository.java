@@ -1,6 +1,6 @@
-package com.arcadag.SpringTestApp.repositories;
+package com.arcadag.SpringQuizApp.repositories;
 
-import com.arcadag.SpringTestApp.entities.Answer;
+import com.arcadag.SpringQuizApp.entities.Answer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

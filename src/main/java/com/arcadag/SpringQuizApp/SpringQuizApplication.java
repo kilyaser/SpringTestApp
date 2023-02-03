@@ -1,13 +1,13 @@
-package com.arcadag.SpringTestApp;
+package com.arcadag.SpringQuizApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringTestAppApplication {
+public class SpringQuizApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringTestAppApplication.class, args);
+		SpringApplication.run(SpringQuizApplication.class, args);
 	}
 
 }

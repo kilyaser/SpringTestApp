@@ -1,8 +1,8 @@
-package com.arcadag.SpringTestApp.controllers;
+package com.arcadag.SpringQuizApp.controllers;
 
-import com.arcadag.SpringTestApp.converters.QuestionItemConverter;
-import com.arcadag.SpringTestApp.dtos.QuestionItemDto;
-import com.arcadag.SpringTestApp.servicies.QuizService;
+import com.arcadag.SpringQuizApp.converters.QuestionItemConverter;
+import com.arcadag.SpringQuizApp.dtos.QuestionItemDto;
+import com.arcadag.SpringQuizApp.servicies.QuizService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

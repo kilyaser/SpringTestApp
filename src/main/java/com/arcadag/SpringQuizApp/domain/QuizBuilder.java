@@ -1,10 +1,10 @@
-package com.arcadag.SpringTestApp.domain;
+package com.arcadag.SpringQuizApp.domain;
 
-import com.arcadag.SpringTestApp.entities.Answer;
-import com.arcadag.SpringTestApp.entities.Question;
-import com.arcadag.SpringTestApp.models.QuestionItem;
-import com.arcadag.SpringTestApp.models.Quiz;
-import com.arcadag.SpringTestApp.servicies.QuestionService;
+import com.arcadag.SpringQuizApp.entities.Answer;
+import com.arcadag.SpringQuizApp.entities.Question;
+import com.arcadag.SpringQuizApp.models.QuestionItem;
+import com.arcadag.SpringQuizApp.models.Quiz;
+import com.arcadag.SpringQuizApp.servicies.QuestionService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -38,12 +38,12 @@ public class QuizBuilder {
 
             Long id = (long) (Math.random() * questions) + 1;
             Question question = questionService.findQuestionById(id);
-            List<Answer> correctAnswers = question.getAnswers();
-            int quantityOfCorrectAnswer = (int) correctAnswers.stream().filter(Answer::isCorrect).count();
+            List<Answer> answers = question.getAnswers();
+            int quantityOfCorrectAnswer = (int) answers.stream().filter(Answer::isCorrect).count();
 
             questionItem.setId(id);
             questionItem.setQuestion(question);
-            questionItem.setAnswer(correctAnswers);
+            questionItem.setAnswer(answers);
             questionItem.setQuantityOfCorrectAnswer(quantityOfCorrectAnswer);
             quiz.getQuizData().put(id, questionItem);
         }
