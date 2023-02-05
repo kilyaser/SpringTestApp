@@ -19,7 +19,10 @@ public class QuizService {
 
     public List<QuestionItem> getQuiz() {
         List<QuestionItem> items = new ArrayList<>();
-        Quiz quiz = quizBuilder.create();
+        Quiz quiz = quizBuilder.create()
+                .addQuestions()
+                .build();
+
         Set<Long> keySet = quiz.getQuizData().keySet();
         for(Long key : keySet) {
             items.add(quiz.getQuizData().get(key));

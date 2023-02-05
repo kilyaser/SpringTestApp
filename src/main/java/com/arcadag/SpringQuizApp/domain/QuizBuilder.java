@@ -22,16 +22,16 @@ public class QuizBuilder {
     private Quiz quiz;
     private long questions;
 
-    public Quiz create() {
+    public QuizBuilder create() {
         questions = questionService.countQuestions();
         Map<Long, QuestionItem> quizData = new HashMap<>();
         this.quiz = new Quiz();
         quiz.setQuizData(quizData);
-        addQuestions(quiz);
-        return quiz;
+        addQuestions();
+        return this;
     }
 
-    private void addQuestions(Quiz quiz) {
+    public QuizBuilder addQuestions() {
         while (quiz.getQuizData().size() < 5) {
 
             QuestionItem questionItem = new QuestionItem();
@@ -47,6 +47,11 @@ public class QuizBuilder {
             questionItem.setQuantityOfCorrectAnswer(quantityOfCorrectAnswer);
             quiz.getQuizData().put(id, questionItem);
         }
+        return this;
+    }
+
+    public Quiz build() {
+        return quiz;
     }
 
 
