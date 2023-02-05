@@ -27,7 +27,6 @@ public class QuizBuilder {
         Map<Long, QuestionItem> quizData = new HashMap<>();
         this.quiz = new Quiz();
         quiz.setQuizData(quizData);
-        addQuestions();
         return this;
     }
 
