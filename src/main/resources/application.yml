@@ -9,5 +9,9 @@ spring:
   jpa:
     show-sql: true
 
+quiz:
+  question:
+    quantity: 5
+
 
 

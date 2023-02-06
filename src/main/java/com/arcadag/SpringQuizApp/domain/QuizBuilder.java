@@ -1,24 +1,26 @@
 package com.arcadag.SpringQuizApp.domain;
 
-import com.arcadag.SpringQuizApp.entities.Answer;
-import com.arcadag.SpringQuizApp.entities.Question;
+import com.arcadag.SpringQuizApp.entity.Answer;
+import com.arcadag.SpringQuizApp.entity.Question;
 import com.arcadag.SpringQuizApp.models.QuestionItem;
 import com.arcadag.SpringQuizApp.models.Quiz;
 import com.arcadag.SpringQuizApp.servicies.QuestionService;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Data
 @Slf4j
 @Component
 @RequiredArgsConstructor
 public class QuizBuilder {
     private final QuestionService questionService;
+
+    @Value("${quiz.question.quantity}")
+    private int quantity;
     private Quiz quiz;
     private long questions;
 
@@ -31,7 +33,7 @@ public class QuizBuilder {
     }
 
     public QuizBuilder addQuestions() {
-        while (quiz.getQuizData().size() < 5) {
+        while (quiz.getQuizData().size() < quantity) {
 
             QuestionItem questionItem = new QuestionItem();
 

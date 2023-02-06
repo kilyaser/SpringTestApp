@@ -1,6 +1,6 @@
 package com.arcadag.SpringQuizApp.servicies;
 
-import com.arcadag.SpringQuizApp.repositories.AnswerRepository;
+import com.arcadag.SpringQuizApp.repository.AnswerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

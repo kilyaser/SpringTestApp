@@ -1,4 +1,4 @@
-package com.arcadag.SpringQuizApp.entities;
+package com.arcadag.SpringQuizApp.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

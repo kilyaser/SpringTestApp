@@ -6,9 +6,8 @@ import com.arcadag.SpringQuizApp.models.Quiz;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 
 @Service
 @RequiredArgsConstructor
@@ -16,18 +15,13 @@ import java.util.Set;
 public class QuizService {
     private final QuizBuilder quizBuilder;
 
-
     public List<QuestionItem> getQuiz() {
-        List<QuestionItem> items = new ArrayList<>();
+        List<QuestionItem> items;
         Quiz quiz = quizBuilder.create()
                 .addQuestions()
                 .build();
 
-        Set<Long> keySet = quiz.getQuizData().keySet();
-        for(Long key : keySet) {
-            items.add(quiz.getQuizData().get(key));
-        }
-        log.info("items size in QuizService {}", items.size());
+        items = quiz.getQuizData().values().stream().toList();
         return items;
     }
 

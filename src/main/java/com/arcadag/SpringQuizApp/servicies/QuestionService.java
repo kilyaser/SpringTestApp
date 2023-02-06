@@ -1,8 +1,8 @@
 package com.arcadag.SpringQuizApp.servicies;
 
-import com.arcadag.SpringQuizApp.entities.Question;
+import com.arcadag.SpringQuizApp.entity.Question;
 import com.arcadag.SpringQuizApp.exception.ResourceNotFoundException;
-import com.arcadag.SpringQuizApp.repositories.QuestionRepository;
+import com.arcadag.SpringQuizApp.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

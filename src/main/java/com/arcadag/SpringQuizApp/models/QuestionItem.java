@@ -1,7 +1,7 @@
 package com.arcadag.SpringQuizApp.models;
 
-import com.arcadag.SpringQuizApp.entities.Answer;
-import com.arcadag.SpringQuizApp.entities.Question;
+import com.arcadag.SpringQuizApp.entity.Answer;
+import com.arcadag.SpringQuizApp.entity.Question;
 import lombok.Data;
 
 import java.util.List;

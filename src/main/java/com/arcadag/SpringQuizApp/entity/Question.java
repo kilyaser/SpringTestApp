@@ -1,4 +1,4 @@
-package com.arcadag.SpringQuizApp.entities;
+package com.arcadag.SpringQuizApp.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,7 +21,7 @@ public class Question {
     @Column(name = "theme")
     private String theme;
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "question")
     private List<Answer> answers;
 
     @Column(name = "explanation")

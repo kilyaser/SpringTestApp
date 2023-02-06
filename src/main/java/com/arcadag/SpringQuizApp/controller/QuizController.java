@@ -1,4 +1,4 @@
-package com.arcadag.SpringQuizApp.controllers;
+package com.arcadag.SpringQuizApp.controller;
 
 import com.arcadag.SpringQuizApp.converters.QuestionItemConverter;
 import com.arcadag.SpringQuizApp.dtos.QuestionItemDto;
