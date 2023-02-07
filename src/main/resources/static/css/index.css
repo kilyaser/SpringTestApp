@@ -1,0 +1,12 @@
+li {
+    list-style-type: none;
+}
+.cat {
+    position: absolute;
+    top: 5px;
+    left: 100px;
+}
+.ru {
+    display: none;
+}
+

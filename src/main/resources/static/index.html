@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <title>Java Quiz</title>
+</head>
+<body>
+  <div class="container">
+    <div class="shadow-lg p-3 mb-5 mt-5 bg-body rounded">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Language
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item ru-action" href="#" onclick="FuncRu()">Ru</a></li>
+          <li><a class="dropdown-item en-action" href="#" onclick="FuncEn()">En</a></li>
+        </ul>
+      </li>
+      <div class="mt-3 d-flex justify-content-center">
+        <img src="/image/java_icon.svg" alt="Java" width="100" height="100">
+      </div>
+      <div class=" mt-5">
+          <p class="en fs-4 pb-5 px-5 fw-normal text-center" id="en">Greetings to&nbsp;you who walk the way of&nbsp;Java. I&nbsp;see you have broken a&nbsp;lot of&nbsp;copies along the way, but you are still determined and motivated to&nbsp;go&nbsp;to&nbsp;the end. Which one, as&nbsp;you know unattainable. Ahead of&nbsp;you is&nbsp;a&nbsp;test consisting of&nbsp;5&nbsp;questions and 15&nbsp;minutes of&nbsp;time to&nbsp;check the level of&nbsp;your training. Based on&nbsp;the result, recommendations will be&nbsp;formed on&nbsp;the topics what you need to&nbsp;improve</p>
+
+          <p class="ru fs-4 pb-5 px-5 fw-normal text-center" id="ru">Приветствую тебя идущий путем Java. Вижу ты&nbsp;не&nbsp;мало копий сломал на&nbsp;этом пути, но&nbsp;по-прежнему полон решимости
+            и&nbsp;мотивации идти до&nbsp;конца. Которого, как известно на&nbsp;пути изучения Java нет. Впереди тебя ждет тест, состоящий из&nbsp;5&nbsp;вопросов и&nbsp;15&nbsp;минут времени на&nbsp;то,
+            чтобы проверить уровень своей подготовки. По&nbsp;результату будут сформированы рекомендации, по&nbsp;темам, которые тебе нужно подтянуть.</p>
+      </div>
+        <div class="d-flex justify-content-center">
+          <div class="d-flex position-relative">
+            <img class="cat" src="image/cat_icon.svg" width="50" height="50">
+            <button id="btn" type="button" class="btn btn-info mt-5 mb-5 px-5 fs-4">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function FuncRu() {
+      document.getElementById("ru").style.display = "block";
+      document.getElementById("en").style.display = "none";
+      document.getElementById("btn").textContent = "Старт";
+    }
+    function FuncEn() {
+      document.getElementById("ru").style.display = "none";
+      document.getElementById("en").style.display = "block";
+      document.getElementById("btn").textContent = "Start";
+    }
+  </script>
+
+</body>
+</html>

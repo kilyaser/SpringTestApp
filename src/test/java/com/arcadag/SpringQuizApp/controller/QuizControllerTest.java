@@ -25,8 +25,8 @@ public class QuizControllerTest {
                 .uri("/api/quiz")
                 .exchange()
                 .expectBodyList(QuestionItemDto.class)
-                .returnResult().
-                getResponseBody();
+                .returnResult()
+                .getResponseBody();
 
         Assertions.assertNotNull(itemDtosByHttp);
         Assertions.assertEquals(quantity, itemDtosByHttp.size());
