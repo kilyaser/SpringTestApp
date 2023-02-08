@@ -9,4 +9,18 @@ li {
 .ru {
     display: none;
 }
+.form-check {
+    margin-left: 500px;
+}
+@media (max-width: 1024px) {
+    .form-check {
+        margin-left: 300px;
+    }
+}
+@media (max-width: 769px) {
+    .form-check {
+        margin-left: 0;
+    }
+}
+
 
