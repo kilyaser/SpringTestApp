@@ -4,6 +4,7 @@ angular.module('quiz', ['ngStorage']).controller('quizController', function ($sc
 
     $localStorage.answer = [];
     $scope.i = 0;
+    $localStorage.hasResult = false;
 
     $scope.loadQuiz = function () {
         $http.get(quizContextPath)
@@ -35,21 +36,30 @@ angular.module('quiz', ['ngStorage']).controller('quizController', function ($sc
         $localStorage.answer.push(obj);
         if ($localStorage.answer.length === $scope.quantity) {
             btn.text("Get report");
-            $scope.getReport($localStorage.answer);
+            $scope.getResult($localStorage.answer);
         }
-
     }
 
-    $scope.getReport = function (answers) {
+    $scope.getResult = function (answers) {
         $http.post(answerContextPath, answers)
             .then(function (response) {
                 console.log(response);
+                $scope.result = response.data;
+                $localStorage.hasResult = true;
             });
 
     }
-    $scope.getResult = function (answers) {
+    $scope.getReport = function (answers) {
 
     }
+    $rootScope.isResultGot = function () {
+        if ($localStorage.hasResult) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     $scope.loadQuiz();
 
 });
