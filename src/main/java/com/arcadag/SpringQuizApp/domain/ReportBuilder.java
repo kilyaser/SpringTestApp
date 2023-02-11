@@ -6,6 +6,7 @@ import com.arcadag.SpringQuizApp.dtos.ReportItem;
 import com.arcadag.SpringQuizApp.entity.Answer;
 import com.arcadag.SpringQuizApp.entity.Question;
 import com.arcadag.SpringQuizApp.servicies.QuestionService;
+import com.arcadag.SpringQuizApp.servicies.ResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReportBuilder {
     private final QuestionService questionService;
+    private final ResultService resultService;
     private ReportDto reportDto;
     private List<AnswerDto> answerDtos;
 
@@ -29,12 +31,14 @@ public class ReportBuilder {
         for (AnswerDto answerDto : answerDtos) {
             ReportItem reportItem = new ReportItem();
             Question question = questionService.findQuestionById(answerDto.getId());
-            reportItem.setTheme(question.getTheme());
-            reportItem.setQuestion(question.getQuestion());
-            reportItem.setExplanation(question.getExplanation());
-            reportItem.setCorrectAnswers(getCorrectAnswer(question));
-            reportItem.setUserAnswers(answerDto.getAnswers());
-            reportDto.getReportItems().add(reportItem);
+            if (!resultService.matchAllQuestion(getCorrectAnswer(question), answerDto.getAnswers())){
+                reportItem.setCorrectAnswers(getCorrectAnswer(question));
+                reportItem.setUserAnswers(isUserAnswered(answerDto.getAnswers()));
+                reportItem.setTheme(question.getTheme());
+                reportItem.setQuestion(question.getQuestion());
+                reportItem.setExplanation(question.getExplanation());
+                reportDto.getReportItems().add(reportItem);
+            }
         }
         return this;
     }
@@ -42,6 +46,14 @@ public class ReportBuilder {
     public ReportDto build() {
         return reportDto;
     }
+
+    private List<String> isUserAnswered(List<String> userAnswers) {
+        if (userAnswers.size() == 0) {
+            userAnswers.add("You didn't answer the question");
+        }
+        return userAnswers;
+    }
+
 
 
     private List<String> getCorrectAnswer(Question question) {
