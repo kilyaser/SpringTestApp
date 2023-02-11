@@ -35,7 +35,7 @@
           <p class="text-center fs-4 fw-semibold">
             <span>You answered {{result.correctAnswers}} out of {{result.totalQuestion}} questions.</span>
           </p>
-          <div class="text-center fw-normal fs-5">Recommended topics for study</div>
+          <div class="text-center fw-normal fs-5">Recommended topics for study:</div>
           <div class="d-flex justify-content-center">
             <div ng-repeat="t in result.themes">
               <p class="p-2 fw-normal fs-5"><span>{{t}}</span></p>
@@ -43,15 +43,26 @@
           </div>
         </div>
       </div>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" ng-show="!isResultGot()">
           <div class="d-flex position-relative">
 <!--            <img class="cat" src="image/cat_icon.svg" width="50" height="50">-->
             <button id="btn" type="button" class="btn btn-info mt-5 mb-5 px-5 fs-4" ng-click="nextQuestion(i)">Next</button>
           </div>
         </div>
+      <div class="d-flex justify-content-center" ng-show="isResultGot()">
+        <div class="d-flex position-relative">
+          <img class="cat-report" src="image/report_cat.svg" width="70" height="70">
+          <a id="btn-report" type="button" class="btn btn-info mt-5 mb-5 px-5 fs-4" href="report.html" >Get report</a>
+        </div>
+      </div>
       </div>
     </div>
   </div>
+  <footer>
+    <div class="d-flex justify-content-center sticky-bottom">
+      <div class="text-center">&copy; Ilia Kalendarev. 2023</div>
+    </div>
+  </footer>
 
 
 </body>

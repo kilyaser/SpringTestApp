@@ -18,7 +18,7 @@ public class QuizBuilderTest {
 
     @Test
     public void creatQuizTest() {
-       Quiz quiz = quizBuilder.create()
+       Quiz quiz = quizBuilder.createQuiz()
                 .addQuestions()
                 .build();
 

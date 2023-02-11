@@ -35,7 +35,6 @@ angular.module('quiz', ['ngStorage']).controller('quizController', function ($sc
 
         $localStorage.answer.push(obj);
         if ($localStorage.answer.length === $scope.quantity) {
-            btn.text("Get report");
             $scope.getResult($localStorage.answer);
         }
     }
@@ -49,9 +48,7 @@ angular.module('quiz', ['ngStorage']).controller('quizController', function ($sc
             });
 
     }
-    $scope.getReport = function (answers) {
 
-    }
     $rootScope.isResultGot = function () {
         if ($localStorage.hasResult) {
             return true;

@@ -24,7 +24,7 @@ public class QuizBuilder {
     private Quiz quiz;
     private long questions;
 
-    public QuizBuilder create() {
+    public QuizBuilder createQuiz() {
         questions = questionService.countQuestions();
         Map<Long, QuestionItem> quizData = new HashMap<>();
         this.quiz = new Quiz();

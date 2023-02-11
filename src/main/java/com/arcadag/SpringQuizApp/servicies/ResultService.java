@@ -5,14 +5,12 @@ import com.arcadag.SpringQuizApp.dtos.ResultDto;
 import com.arcadag.SpringQuizApp.entity.Answer;
 import com.arcadag.SpringQuizApp.entity.Question;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class ResultService {
     private final QuestionService questionService;
     @Value("${quiz.question.quantity}")
@@ -37,7 +35,6 @@ public class ResultService {
 
             if (matchAllQuestion(correctAnswer, answerDtoList)) {
                 countCorrectAnswer++;
-                log.info("countCorrect: {}", correctAnswer);
             } else {
                 if (!resultDto.getThemes().contains(theme)) {
                     resultDto.getThemes().add(theme);
@@ -50,7 +47,6 @@ public class ResultService {
     }
 
     public boolean matchAllQuestion(List<String> correctAnswers, List<String> answers) {
-       log.info("correctAnswers {}, answers: {}", correctAnswers, answers);
         if (correctAnswers.size() != answers.size()) {
             return false;
         }

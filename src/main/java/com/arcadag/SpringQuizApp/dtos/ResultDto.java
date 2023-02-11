@@ -1,8 +1,6 @@
 package com.arcadag.SpringQuizApp.dtos;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
-
 import java.util.ArrayList;
 import java.util.List;
 
