@@ -28,18 +28,19 @@ public class ReportBuilder {
     }
 
     public ReportBuilder addReportItems() {
-        for (AnswerDto answerDto : answerDtos) {
-            ReportItem reportItem = new ReportItem();
-            Question question = questionService.findQuestionById(answerDto.getId());
-            if (!resultService.matchAllQuestion(getCorrectAnswer(question), answerDto.getAnswers())){
-                reportItem.setCorrectAnswers(getCorrectAnswer(question));
-                reportItem.setUserAnswers(isUserAnswered(answerDto.getAnswers()));
-                reportItem.setTheme(question.getTheme());
-                reportItem.setQuestion(question.getQuestion());
-                reportItem.setExplanation(question.getExplanation());
-                reportDto.getReportItems().add(reportItem);
+            for (AnswerDto answerDto : answerDtos) {
+                ReportItem reportItem = new ReportItem();
+                Question question = questionService.findQuestionById(answerDto.getId());
+                if (!resultService.matchAllQuestion(getCorrectAnswer(question), answerDto.getAnswers())){
+                    reportItem.setCorrectAnswers(getCorrectAnswer(question));
+                    reportItem.setUserAnswers(isUserAnswered(answerDto.getAnswers()));
+                    reportItem.setTheme(question.getTheme());
+                    reportItem.setQuestion(question.getQuestion());
+                    reportItem.setExplanation(question.getExplanation());
+                    reportDto.getReportItems().add(reportItem);
+                }
+
             }
-        }
         return this;
     }
 
@@ -49,7 +50,7 @@ public class ReportBuilder {
 
     private List<String> isUserAnswered(List<String> userAnswers) {
         if (userAnswers.size() == 0) {
-            userAnswers.add("You didn't answer the question");
+            userAnswers.add("You didn't answer the question.");
         }
         return userAnswers;
     }

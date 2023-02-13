@@ -1,4 +1,4 @@
-angular.module('quiz', ['ngStorage']).controller('quizController', function ($scope, $http, $localStorage, $rootScope) {
+angular.module('quiz', ['ngStorage']).controller('quizController', function ($scope, $http, $localStorage, $rootScope, $interval) {
     const quizContextPath = 'http://localhost:8080/api/quiz'
     const answerContextPath = 'http://localhost:8080/api/answers'
 
@@ -11,6 +11,7 @@ angular.module('quiz', ['ngStorage']).controller('quizController', function ($sc
             .then(function (response) {
                 $scope.quiz = response.data;
                 $scope.quantity = response.data.length;
+                $scope.second = $scope.quantity * 60;
             });
     };
 
@@ -42,7 +43,6 @@ angular.module('quiz', ['ngStorage']).controller('quizController', function ($sc
     $scope.getResult = function (answers) {
         $http.post(answerContextPath, answers)
             .then(function (response) {
-                console.log(response);
                 $scope.result = response.data;
                 $localStorage.hasResult = true;
             });
@@ -57,6 +57,21 @@ angular.module('quiz', ['ngStorage']).controller('quizController', function ($sc
         }
     }
 
+    $scope.countDownTimer = function () {
+        let time = $interval(function () {
+            if ($scope.second > 0) {
+                $scope.second = $scope.second - 1;
+                $scope.m = Math.floor($scope.second / 60);
+                $scope.s = $scope.second - ($scope.m * 60);
+
+            } else  {
+                $interval.cancel(time);
+                $scope.getResult($localStorage.answer);
+            }
+        }, 1000);
+    }
+
+    $scope.countDownTimer();
     $scope.loadQuiz();
 
 });

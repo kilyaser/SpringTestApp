@@ -16,6 +16,10 @@ public class ResultService {
     @Value("${quiz.question.quantity}")
     private int totalQuestion;
     public ResultDto check(List<AnswerDto> answers) {
+        if (answers.size() == 0) {
+           return getDefaultResultDto();
+        }
+
         ResultDto resultDto = new ResultDto();
         resultDto.setTotalQuestion(totalQuestion);
 
@@ -51,5 +55,13 @@ public class ResultService {
             return false;
         }
          return answers.containsAll(correctAnswers);
+    }
+
+    private ResultDto getDefaultResultDto() {
+        ResultDto resDto = new ResultDto();
+        resDto.setCorrectAnswers(0);
+        resDto.setTotalQuestion(totalQuestion);
+        resDto.getThemes().add("No recommendation, because you didn't answer any question.");
+        return resDto;
     }
 }
