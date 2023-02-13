@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/answers")
-public class AnswerController {
+public class ResultController {
     private final AnswerService answerService;
     @PostMapping
     public ResultDto getResult(@RequestBody List<AnswerDto> answers) {

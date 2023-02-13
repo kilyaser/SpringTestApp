@@ -50,11 +50,6 @@ public class ResultService {
         if (correctAnswers.size() != answers.size()) {
             return false;
         }
-
-        if (answers.containsAll(correctAnswers)) {
-            return true;
-        } else {
-            return false;
-        }
+         return answers.containsAll(correctAnswers);
     }
 }
