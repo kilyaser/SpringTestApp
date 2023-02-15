@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/answers")
@@ -20,7 +19,6 @@ public class ResultController {
     private final AnswerService answerService;
     @PostMapping
     public ResultDto getResult(@RequestBody List<AnswerDto> answers) {
-       log.info(answers.toString());
        return answerService.checkAnswers(answers);
     }
 }

@@ -6,12 +6,12 @@ spring:
     password: Asdfg6hj
     hikari:
       schema: springTestAppDB
-  jpa:
-    show-sql: true
+#  jpa:
+#    show-sql: true
 
 quiz:
   question:
-    quantity: 5
+    quantity: 10
 
 
 
