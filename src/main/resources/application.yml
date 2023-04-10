@@ -1,13 +1,4 @@
-spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=springTestAppDB
-    username: postgres
-    password: Asdfg6hj
-    hikari:
-      schema: springTestAppDB
-#  jpa:
-#    show-sql: true
+
 
 quiz:
   question:
